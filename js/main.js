@@ -41,8 +41,12 @@ const renderCardContent = (data) => {
 	}
 
 	const [resultData, summaryData] = cardData;
-	const [resultTitle, resultChart, resultDescTitle, resultDescContent] =
-		resultData;
+	const [
+		resultTitle,
+		resultChart,
+		resultDescriptionTitle,
+		resultDescriptionContent,
+	] = resultData;
 	const [summaryTitle, ...summaryCategories] = summaryData;
 
 	const cardTemplateNode = document.importNode(cardTemplate.content, true);
@@ -68,11 +72,14 @@ const renderCardContent = (data) => {
 		resultChart.indexOf(' ') + 1
 	);
 
-	const cardResultDescTitleEl = cardEl.querySelector('.card__desc-title');
-	cardResultDescTitleEl.textContent = resultDescTitle;
+	const cardResultDescriptionTitleEl =
+		cardResultEl.querySelector('.card__desc-title');
+	cardResultDescriptionTitleEl.textContent = resultDescriptionTitle;
 
-	const cardResultDescContentEl = cardEl.querySelector('.card__desc-content');
-	cardResultDescContentEl.textContent = resultDescContent;
+	const cardResultDescriptionContentEl = cardResultEl.querySelector(
+		'.card__desc-content'
+	);
+	cardResultDescriptionContentEl.textContent = resultDescriptionContent;
 
 	/* card summary */
 	const cardSummaryTitleEl = cardSummaryEl.querySelector('.card__title');
